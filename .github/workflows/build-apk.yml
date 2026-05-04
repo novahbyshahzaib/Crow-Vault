@@ -1,7 +1,7 @@
 name: Build Android APK
 
 on:
-  workflow_dispatch: # This allows you to manually click a "Run Workflow" button on GitHub
+  workflow_dispatch:
 
 jobs:
   build:
@@ -9,15 +9,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Setup Java SDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -33,7 +33,7 @@ jobs:
         run: ./gradlew assembleRelease
 
       - name: Upload APK File
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: CrowVault-App
           path: android/app/build/outputs/apk/release/app-release.apk
