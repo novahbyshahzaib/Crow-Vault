@@ -5,6 +5,9 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#020617"
+    },
     "android": {
       "package": "com.crowvault.tuitionmanager"
     }
